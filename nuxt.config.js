@@ -29,12 +29,16 @@ export default {
   ** Global CSS
   */
   css: [
+    'bootstrap-css-only/css/bootstrap.min.css',
+    'mdbvue/lib/css/mdb.min.css',
+    '@fortawesome/fontawesome-free/css/all.min.css'
   ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~plugins/core-components.js'
   ],
   /*
   ** Auto import components
@@ -51,11 +55,30 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios'
   ],
+  axios: {
+    baseURL:  process.env.BASE_URL || 'https://papi-lara-ecommerce-api.herokuapp.com/api',
+    credentials: false
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  }
+    extend(config, ctx) {},
+    transpile: [
+      'mdbvue/lib/components'
+    ]
+  },
+  pageTransition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
+  loading: {color: '#fa923f', height: '4px', duration: 5000 },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#fa923f',
+  },
+
 }
