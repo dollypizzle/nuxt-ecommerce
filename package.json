@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^1.0.0",
+    "@nuxtjs/axios": "^5.12.1",
+    "bootstrap-css-only": "^4.4.1",
+    "js-cookie": "^2.2.1",
+    "mdbvue": "^6.7.1",
     "nuxt": "^2.14.0"
   },
   "devDependencies": {
